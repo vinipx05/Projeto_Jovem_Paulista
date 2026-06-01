@@ -2,25 +2,26 @@ package com.jovempaulista.api.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "jovens")
+@Table(name = "usuarios")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Jovem {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String cpf;
-    private LocalDate dataNascimento;
-    private String cidade;
-    private String estado;
-    private String escolaridade;
-    private String resumo;
+    private String nome;
+    private String email;
+    private String senhaHash;
+    private String tipo;
+    private String telefone;
+    private String dataCadastro;
+    private boolean ativo;
+
 
 }

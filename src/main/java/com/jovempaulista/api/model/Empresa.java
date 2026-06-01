@@ -3,24 +3,27 @@ package com.jovempaulista.api.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
-
 @Entity
-@Table(name = "jovens")
+@Table(name = "empresas")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Jovem {
+@NoArgsConstructor
+public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String cpf;
-    private LocalDate dataNascimento;
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
+    private String cnpj;
+    private String razaoSocial;
+    private String setor;
     private String cidade;
     private String estado;
-    private String escolaridade;
-    private String resumo;
+    private String descricao;
+
 
 }
