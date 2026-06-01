@@ -25,11 +25,11 @@ O projeto busca resolver a dificuldade que muitos jovens enfrentam ao entrar no 
 ---
 
 👨‍💻 Integrantes do Grupo
-Vinicius Gabriel
-Felipe Lino
-Bruno Henrique
-Antônio Carlos
-Pedro Melo
+- Vinicius Gabriel
+- Felipe Lino
+- Bruno Henrique
+- Antônio Carlos
+- Pedro Melo
 
 ---
 
