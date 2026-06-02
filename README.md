@@ -16,8 +16,7 @@ O projeto busca resolver a dificuldade que muitos jovens enfrentam ao entrar no 
 
 - Java
 - Spring Boot
-- Oracle Database
-- SQL
+- PostgreSQL
 - Maven
 - Git e GitHub
 - Postman
@@ -41,7 +40,6 @@ Antes de iniciar, você precisa ter instalado:
 
 - Java JDK 17+
 - Maven
-- Oracle Database
 - Git
 - IDE (IntelliJ, VS Code ou Eclipse)
 
