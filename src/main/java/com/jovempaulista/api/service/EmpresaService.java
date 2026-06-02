@@ -13,10 +13,11 @@ public class EmpresaService {
     @Autowired
     private EmpresaRepository Repository;
 
-    public List<Empresa> buscarPorId(Long id) {
+    public List<Empresa> listarTodas() {
         return Repository.findAll();
-
     }
+
+
 
     public Empresa buscarPorId(long id) {
         return Repository.findById(id)

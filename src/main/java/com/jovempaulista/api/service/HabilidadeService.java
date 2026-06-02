@@ -12,23 +12,20 @@ public class HabilidadeService {
     @Autowired
     private HabilidadeRepository repository;
 
-    public List<Habilidade> listar(){
+    public List<Habilidade> listarTodas() {
         return repository.findAll();
     }
 
-    public Habilidade buscarPorId(long id){
+    public Habilidade buscarPorId(Long id) {
         return repository.findById(id)
-                .orElseThrow(()-> new RuntimeException("Habilidade não encontrada"));
-
+                .orElseThrow(() -> new RuntimeException("Habilidade não encontrada"));
     }
 
-    public Habilidade salvar(Habilidade habilidade){
+    public Habilidade salvar(Habilidade habilidade) {
         return repository.save(habilidade);
     }
 
-    public void deletar(long id){
+    public void deletar(Long id) {
         repository.deleteById(id);
     }
-
-
 }
