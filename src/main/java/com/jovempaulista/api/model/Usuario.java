@@ -21,7 +21,7 @@ public class Usuario {
     private String tipo;
     private String telefone;
     private String dataCadastro;
-    private boolean ativo;
+    private Boolean ativo;
 
 
 }

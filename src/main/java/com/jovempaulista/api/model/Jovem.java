@@ -1,8 +1,8 @@
 package com.jovempaulista.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -15,6 +15,11 @@ public class Jovem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    @JsonIgnoreProperties("hibernateLazyInitializer")
+    private Usuario usuario;
 
     private String cpf;
     private LocalDate dataNascimento;

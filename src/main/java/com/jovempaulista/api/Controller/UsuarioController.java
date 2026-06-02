@@ -11,25 +11,30 @@ import java.util.List;
 public class UsuarioController {
 
     @Autowired
-    private UsuarioService Service;
+    private UsuarioService service;
+
+    @GetMapping
+    public List<Usuario> listarTodos() {
+        return service.listarTodos();
+    }
 
     @GetMapping("/{id}")
-    public List<Usuario> listarTodos(){
-        return Service.listarTodos();
+    public Usuario buscarPorId(@PathVariable Long id) {
+        return service.buscarPorId(id);
     }
 
     @PostMapping
-    public Usuario criar(@RequestBody Usuario usuario){
-        return Service.salvar(usuario);
+    public Usuario criar(@RequestBody Usuario usuario) {
+        return service.salvar(usuario);
     }
 
     @PutMapping("/{id}")
-        public Usuario atualizar(@PathVariable long id, @RequestBody Usuario usuario){
-        return Service.atualizar(id, usuario);
-        }
+    public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuario) {
+        return service.atualizar(id, usuario);
+    }
 
-        @DeleteMapping("/{id}")
-    public void deletar(@PathVariable long id){
-        Service.deletar(id);
-        }
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        service.deletar(id);
+    }
 }

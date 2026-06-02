@@ -31,6 +31,6 @@ public class Vaga {
     private BigDecimal salario;
     private LocalDate dataPublicacao;
     private LocalDate dataEncerramento;
-    private boolean ativa;
+    private Boolean ativa;
 
 }
