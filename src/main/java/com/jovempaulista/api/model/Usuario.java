@@ -17,11 +17,10 @@ public class Usuario {
 
     private String nome;
     private String email;
-    private String senhaHash;
+    private String senha;
     private String tipo;
     private String telefone;
-    private String dataCadastro;
+    private LocalDate dataCadastro;
     private Boolean ativo;
-
-
+    private String role; // "ROLE_USER" ou "ROLE_ADMIN"
 }
