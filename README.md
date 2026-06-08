@@ -16,7 +16,10 @@ O projeto busca resolver a dificuldade que muitos jovens enfrentam ao entrar no 
 
 - Java
 - Spring Boot
-- Oracle Database
+- PostgreSQL
+- Spring DAta JPA
+- Lombok
+- Swagger
 - SQL
 - Maven
 - Git e GitHub

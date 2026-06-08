@@ -14,6 +14,111 @@ Verifica se a API está online.
 Jovem Paulista API está online!
 ```
 
+# 🔐 Autenticação JWT
+
+A API utiliza autenticação baseada em JWT (JSON Web Token).
+
+## Registro de Usuário
+
+### POST /auth/register
+
+Realiza o cadastro de um novo usuário.
+
+**Body:**
+
+```json
+{
+  "nome": "Vinicius Gabriel",
+  "email": "vinicius@email.com",
+  "senha": "123456",
+  "tipo": "JOVEM",
+  "telefone": "81999999999"
+}
+```
+
+**Resposta 200:**
+
+```json
+{
+  "id": 1,
+  "nome": "Vinicius Gabriel",
+  "email": "vinicius@email.com",
+  "tipo": "JOVEM"
+}
+```
+
+---
+
+## Login
+
+### POST /auth/login
+
+Autentica um usuário e retorna um token JWT.
+
+**Body:**
+
+```json
+{
+  "email": "vinicius@email.com",
+  "senha": "123456"
+}
+```
+
+**Resposta 200:**
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9..."
+}
+```
+
+---
+
+## Utilizando o Token
+
+Após realizar o login, o token deve ser enviado em todas as rotas protegidas através do cabeçalho:
+
+```http
+Authorization: Bearer SEU_TOKEN_AQUI
+```
+
+Exemplo:
+
+```http
+GET /usuarios
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...
+```
+
+---
+
+## Rotas Públicas
+
+As seguintes rotas podem ser acessadas sem autenticação:
+
+* GET /status
+* POST /auth/register
+* POST /auth/login
+
+---
+
+## Rotas Protegidas
+
+Todas as demais rotas exigem autenticação JWT válida:
+
+* /usuarios
+* /jovens
+* /empresas
+* /vagas
+* /candidaturas
+* /habilidades
+
+Caso o token esteja ausente ou inválido, a API retornará:
+
+```http
+403 Forbidden
+```
+
+
 ---
 
 ## 👤 Usuários — /usuarios
